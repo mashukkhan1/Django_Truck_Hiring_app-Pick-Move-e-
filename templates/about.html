@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <link rel ="stylesheet" type="text/css" href="{% static 'css_files/about.css'%}">
+    <title>About Pick & Move</title>
+      <style>
+      .navbar{
+        margin-bottom:0;
+        border-radius:0;
+      }
+      </style>
+</head>
+
+<body>
+      <nav class="navbar navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand brand-name">
+            <a href="1.home.html"><img class="img-responsive2"
+            src="{% static 'images/logo1.jpg'%}"></a>
+          </div>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+              {% if user.is_authenticated %} <!-- built in authentication function -->
+              <!-- <li>Hello, {{ user.first_name }}</li> -->
+              <li><a href="{% url 'profile' %}">{{ user.first_name }}</a> </li>
+              <li><a href="{% url 'logout' %}">Logout</a> </li>
+              {% else %}
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign up/Log in <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url 'registration' %}">Sign up</a></li>
+                <li><a href="{% url 'login' %}">Log in</a></li>
+              </ul>
+            </li>
+              {% endif %}
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav><br>
+
+    <div class="boxes">
+        <div class="containerr">
+            <br>
+            <h1 class="abt_content">Pick & Move : Hire Truck With Ease</h1>
+            <p>
+                Pick & Move is the largest online platform in Bangladesh to hire pickup, truck or covered van in minutes.
+                It assists you to find trucks for your trips.
+                Predominantly it aims to make truck booking more accessible to everyone for their business or personal needs.
+                Vehicles of all sizes and shapes are available here for hire.
+
+                Pick & Move is fast, affordable, secured.
+                It is free to use for shippers. It ensure lowest price to hire a service.
+                Multiple truck hiring is available too.
+                There's no middle man. Customers can hire truck directly through Pick & Move.
+                All vehicles are verified.
+                Hiring trucks for any pick-up point and drop off point in Bangladesh is possible.
+                All sizes and shapes of trucks are available here.
+
+                Common deliveries our shippers make:
+                <ul>
+                    <li>FMCG Products</li>
+                    <li>Livestock & Poultry Products</li>
+                    <li>Furniture industry</li>
+                    <li>Construction materials</li>
+                    <li>Oversized goods</li>
+                    <li>Garments materials</li>
+                    <li>Export & import materials</li>
+                    <li>Agricultural items</li>
+                    <li>Home shift</li>
+
+                </ul>
+
+
+                Here’s how it works: First, select if you need pickup/truck instantly or later
+                <p>For instant need-</p>
+                    <ul class="abt">
+                        <li>Set delivery routes</li>
+                        <li>Select your vehicle type(1/2ton)</li>
+                        <li>Publish your trip. </li>
+                    </ul>
+                <p>And guess what? Nearby drivers will contact you in seconds</p>
+
+                <p>For later requirements-<p>
+                    <ul class="abt">
+                        <li>Set delivery routes</li>
+                        <li>Select your vehicle type(1/2ton)</li>
+                        <li>Mention the date & time for pick-ups/trucks </li>
+                        <li>Write down product details</li>
+                        <li>Get the confirmation notification</li>
+                    </ul>
+                <p>Guess what? You have just hired a truck. It’s that easy.</p>
+        </div>
+    </div>
+
+    <footer id="mainFooter">
+        <div class="container">
+            <ul>
+                <li><a class="button-foot" href="{% url 'about' %}">About</a> </li>
+                <li><a class="button-foot" href="#">Terms & Conditions</a> </li>
+                <li><a class="button-foot" href="#">FAQ</a></li>
+                <li><a class="button-foot" href="#">Contact Us</a></li>
+                <li class="button-foot">&copy; 2020 PICK & MOVE</li>
+            </ul>
+        </div>
+    </footer>
+
+
+        <script src="{% static 'js/jquery.slim.min.js' %}" ></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js'%}" ></script>
+</body>
+</html>

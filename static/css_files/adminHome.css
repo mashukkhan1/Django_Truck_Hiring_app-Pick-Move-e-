@@ -1,0 +1,219 @@
+body{
+    background-color: whitesmoke;
+    color: black;
+    font-family:"Segoe UI Light" ;
+    font-size: 25px;
+    border-radius: 2px;
+    line-height: 1.5em;
+    margin:0;
+}
+.navbar {
+    background-color: white;
+    color: black;
+    border-bottom: inset;
+}
+.navbar-brand{
+    padding: 3px;
+    margin: 0;
+}
+.navbar a{
+    color: black;
+    font-size: 22px;
+}
+.nav navbar-nav navbar-right{
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.info{
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: #565656;
+    color: rgba(0,67,65,0.77);
+    font-family: "Segoe UI" ;
+    font-size: 75%;
+    text-align: center;
+    line-height: 1.5em;
+
+
+}
+th.info{
+    line-height: 2.5em;
+}
+td.info{
+    line-height: 2em;
+}
+table.info{
+    width: 100%;
+
+}
+
+select{
+    background-color:#c6e6e3;
+}
+h3{
+    font-family: "Segoe UI" ;
+    text-align: center;
+    color: rgba(0,67,65,0.77);
+    margin-top: 4px;
+    margin-bottom: 20px;
+}
+
+.containerr{
+    display: block;
+    width: 100%;
+    margin: auto;
+    margin-top: 1.5em;
+    overflow: hidden;
+    alignment: center;
+    margin-bottom: 1.5em;
+    font-size: 60%;
+}
+.containerr2{
+    display: block;
+    width: 85%;
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+
+    overflow: hidden;
+
+}
+.container-frm{
+    display: block;
+    width: 80%;
+    margin: auto;
+    margin-top: 8px;
+    margin-bottom: 1em;
+    overflow: hidden;
+    alignment: center;
+    padding-left: 1em;
+}
+.buttonnn{
+    background-color: rgba(47,150,137,0.62);
+    color: white;
+    font-size: 20px;
+    border-radius: 15px;
+    border-color: rgba(47,150,137,0.21);
+    padding: 10px 10px;
+    margin-left: 0.7em;
+    alignment: center;
+}
+.buttonnn:hover {
+    background-color: #007b83;
+    color: white;
+}
+#main-header{
+    background-color: whitesmoke;
+    color: black;
+}
+header{
+    color: white;
+    padding: 20px;
+}
+
+a.button-nav{
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+.button-nav:hover {
+    background-color: rgba(47,150,137,0.38);
+    color: white;
+    padding: 10px 5px;
+}
+.boxes2{
+    background-color: rgba(66,188,176,0.26);
+    border-radius: 10px;
+    width: 85%;
+    padding : 10px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 1em;
+    line-height: 30px;
+}
+
+.boxes{
+    background-color: rgba(66,188,176,0.26);
+    border-radius: 10px;
+    width: 85%;
+    padding : 0.75px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 1em;
+    line-height: 17px;
+}
+
+
+p{
+    text-align: center;
+    color: rgba(0,67,65,0.77);
+    font-family: "Segoe UI" ;
+}
+.frm select[type = 'text'], .frm textarea {
+    padding: 6px;
+    width: 95%;
+    background-color:#c6e6e3 ;
+}
+#mainFooter{
+    background:#005c59;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    margin-top: 3px;
+}
+#mainFooter li{
+    display: inline;
+    padding: 0 20px 0 20px;
+    margin-bottom: 0;
+}
+#mainFooter ul{
+    list-style: none;
+     margin-top: 3px;
+    margin-bottom: 3px;
+}
+#mainFooter a{
+    text-decoration: none;
+}
+#mainFooter a:hover{
+    color: darkgray;
+}
+#small_boxes ul{
+    list-style: none;
+    margin-top: 3px;
+    margin-bottom: 10px;
+}
+#small_boxes li{
+    display: inline;
+
+}
+.button-foot{
+    color: whitesmoke;
+}
+.box3{
+    width: 85%;
+}
+.label-success{
+    color: rgba(0,67,65,0.77);
+    background-color:rgba(66,188,176,0.26);
+    width: 85%;
+    padding : 0.75px;
+
+    margin-top: 20px;
+    margin-bottom: 1em;
+
+}
+
+
+@media(max-width:600px){ /* if the browser size goes under 600px
+                            this will manage the floats. they will
+                            come under one another. and it will be completely
+                            responsive*/
+    #main{
+        width: 100%;
+        float: none;
+    }
+    #sidebar{
+        width: 100%;
+        float: none;
+    }
+}

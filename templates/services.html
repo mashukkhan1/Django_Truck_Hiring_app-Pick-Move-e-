@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel ="stylesheet" type="text/css" href="{% static 'css_files/about.css' %}">
+    <title>Services</title>
+      <style>
+      .navbar{
+        margin-bottom:0;
+        border-radius:0;
+      }
+      </style>
+</head>
+
+<body>
+      <nav class="navbar navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand brand-name">
+            <a href="1.home.html"><img class="img-responsive2"
+            src="{% static 'images/logo1.jpg' %}"></a>
+          </div>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+          {% if user.is_authenticated %} <!-- built in authentication function -->
+              <!-- <li>Hello, {{ user.first_name }}</li> -->
+              <li><a href="{% url 'profile' %}">{{ user.first_name }}</a> </li>
+              <li><a href="{% url 'logout' %}">Logout</a> </li>
+              {% else %}
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign up/Log in <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url 'registration' %}">Sign up</a></li>
+                <li><a href="{% url 'login' %}">Log in</a></li>
+              </ul>
+            </li>
+              {% endif %}
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <br><br>
+    <div class="boxes">
+        <div class="containerr">
+            <br>
+            <h1 class="abt_content">Pick & Move : Services</h1>
+            <p>
+                Pick & Move is the largest online platform in Bangladesh to hire pickup, truck or covered van in minutes.
+                It assists you to find trucks for your trips.
+                Predominantly it aims to make truck booking more accessible to everyone for their business or personal needs.
+                Vehicles of all sizes and shapes are available here for hire.
+
+                Pick & Move is fast, affordable, secured.
+                It is free to use for shippers. It ensure lowest price to hire a service.
+                Multiple truck hiring is available too.
+                There's no middle man. Customers can hire truck directly through Pick & Move.
+                All vehicles are verified.
+                Hiring trucks for any pick-up point and drop off point in Bangladesh is possible.
+                All sizes and shapes of trucks are available here.
+
+                <p>We offer different categories of truck according to your needs:</p><br>
+                <ul>
+
+                    <img src="{% static 'images/1ton.jpg' %}" class="center">
+                    <li><h1 class=" truck_type">1 Ton Truck </h1>
+                        <p>In the market, 1 ton category trucks are the smallest in size. Shippers need these trucks to meet their minimum requirements. These trucks are used
+                            mainly for the transport of small business products.
+                            Several brands of 1 ton category trucks are there in the market. Among them, Tata, Mahindra, Toyota etc are the major brands.</p>
+                    </li>
+                    <br><br>
+                    <img src="{% static 'images/2ton.jpg' %}" class="center">
+                    <li><h1 class=" truck_type">2 Ton Truck </h1>
+                        <p>Customers usually pick a truck considering the amount of goods he or she needs to get transported.
+                            The 2-ton category trucks are slightly larger than 1-ton category. These trucks can be used for transporting minor goods or business products.
+                            There are several popular brands on the 2-ton category like Tata, Isuzu, Toyota etc.</p>
+                    </li>
+                    <br><br>
+                    <img src="{% static 'images/3ton.jpg' %}" class="center">
+                    <li><h1 class=" truck_type">3.5 Ton Truck </h1>
+                        <p>3.5-ton category trucks are one of the most widely used ones. It can be used for transportation of business goods or for house shifting if there are a lot of items.
+                            Therefore, we can call it an ’All-rounder’ truck.
+                            Among the popular brands of this category Eicher, Mahindra, Tata, Mitsubishi, JMC etc. are noteworthy.</p>
+                    </li>
+                    <br><br>
+                    <img src="{% static 'images/7ton.jpg' %}" class="center">
+                    <li><h1 class=" truck_type">7.5 Ton Truck </h1>
+                        <p>To carry out industrial goods, big traders and businessmen prefer trucks of 7.5-ton. Basically, the fleet of heavy trucks starts from this category.
+                            There are a number of brands in this category. These are Tata, Isuzu etc.</p>
+                    </li>
+                    <br><br>
+                    <img src="{% static 'images/15ton.jpg' %}" class="center">
+                    <li><h1 class=" truck_type">15 Ton Truck </h1>
+                        <p>15 ton trucks are mostly used by big companies or industries.  These trucks are very popular for transportation of industrial
+                            heavy goods and business products. Eicher, Tata, Ashok Leyland etc. are among the popular brands in this category.</p>
+                    </li>
+                    <br><br>
+                    <img src="{% static 'images/25ton.jpg' %}" class="center">
+                    <li><h1 class=" truck_type">25 Ton Truck </h1>
+                        <p>25 ton trucks are used for the transportation of heavy industrial goods. These trucks are distinct for their use of 10 tires. Among the popular brands
+                            Tata, Ashok Leyland are notable.</p>
+                    </li>
+                    <br><br>
+                    <img src="{% static 'images/lorry.jpg' %}" class="center">
+                    <li><h1 class=" truck_type">Prime Mover/Trailer/Lorry </h1>
+                        <p>The longest vehicle carrying four axles or fourteen-wheel containers is what we call Prime Movers. These are also known as trailers or lorry.
+                            Prime mover’s are mostly used in export-import industry.
+                            DAF, Eicher, Tata etc are among the major brands of prime movers.</p>
+                    </li>
+
+                </ul>
+            <br><br>
+
+
+
+        </div>
+    </div>
+
+     <footer id="mainFooter">
+        <div class="container">
+            <ul>
+                 <li><a class="button-foot" href="{% url 'about'  %}">About</a> </li>
+                <li><a class="button-foot" href="{% url 'tnc' %}">Terms & Conditions</a> </li>
+                <li><a class="button-foot" href="{% url 'faq' %}">FAQ</a></li>
+                <li><a class="button-foot" href="{% url 'contactUs' %}">Contact Us</a></li>
+                <li class="button-foot">&copy; 2020 PICK & MOVE</li>
+            </ul>
+        </div>
+    </footer>
+
+
+        <script src="{% static 'js/jquery.slim.min.js' %}" ></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}" ></script>
+</body>
+</html>

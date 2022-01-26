@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel ="stylesheet" type="text/css" href="{% static 'css_files/instantOrder.css'%}">
+    <title>Bill</title>
+      <style>
+      .navbar{
+        margin-bottom:0;
+        border-radius:0;
+      }
+      </style>
+</head>
+<body>
+          <nav class="navbar navbar-fixed-top">
+              <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <div class="navbar-brand brand-name">
+                    <a href="/"><img class="img-responsive2"
+                    src="{% static 'images/logo1.jpg'%}"></a>
+                  </div>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="{% url 'services' %}">Services</a></li>
+                  {% if user.is_authenticated %} <!-- built in authentication function -->
+              <!-- <li>Hello, {{ user.first_name }}</li> -->
+                        <li><a href="{% url 'profile' %}">{{ user.first_name }}</a> </li>
+                        <li><a href="{% url 'logout' %}">Logout</a> </li>
+                    {% else %}
+                         <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign up/Log in <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{% url 'registration' %}">Sign up</a></li>
+                                <li><a href="{% url 'login' %}">Log in</a></li>
+                            </ul>
+                        </li>
+                    {% endif %}
+                  </ul>
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+          </nav><br>
+    <div class="boxes">
+        <div class="containerr">
+          <br>
+              <h1 class="bill_heading">Pick & Move</h1>
+              <h2 class="bill_title">Customer's Bill</h2>
+              <table class ="table profile-info-table" >
+                  <tr>
+                      <td class ="attb_name">Name</td>
+                      <td>:</td>
+                      {% if user.is_authenticated %}
+                      <td class="attb_value">{{name}}</td>
+                      {% else %}
+                      <td class="attb_value">{{ infos.name }}</td>
+                      {% endif %}
+                  </tr>
+                  <tr>
+                      <td class="attb_name">Mobile Number</td>
+                      <td>:</td>
+                      <td class="attb_value">{{ infos.phone }}</td>
+                  </tr>
+                  <tr>
+                      <td class="attb_name">Date</td>
+                      <td>:</td>
+                      <td class="attb_value">{{ infos.date }}</td>
+                  </tr>
+                  <tr>
+                      <td class="attb_name">Time</td>
+                      <td>:</td>
+                      <td class="attb_value">{{ infos.time }}</td>
+                  </tr>
+                  <tr>
+                      <td class="attb_name">Truck Type</td>
+                      <td>:</td>
+                      <td class="attb_value">{{ infos.truck }}</td>
+                  </tr>
+                  <tr>
+                      <td class="attb_name">Number of Labours Hired</td>
+                      <td>:</td>
+                      <td class="attb_value">{{ infos.n_labours }}</td>
+                  </tr>
+                  <tr>
+                      <td class="attb_name">Product Description</td>
+                      <td>:</td>
+                      <td class="attb_value">{{ infos.loadDesc }}</td>
+                  </tr>
+                  <tr>
+                      <td class="attb_name">Loading Location</td>
+                      <td>:</td>
+                      <td class="attb_value">{{ infos.load_location }}</td>
+                  </tr>
+                  <tr>
+                      <td class="attb_name">Unloading Location</td>
+                      <td>:</td>
+                      <td class="attb_value">{{ infos.unload_location }}</td>
+                  </tr>
+                  <tr>
+                      <td class="attb_name">Total Amount</td>
+                      <td>:</td>
+                      <td class="attb_value">{{ bill }}</td>
+                  </tr>
+              </table>
+        </div>
+      <br>
+
+    </div>
+    <br>
+    <footer id="mainFooter">
+        <div class="container">
+            <ul>
+                <li><a class="button-foot" href="{% url 'about' %}">About</a> </li>
+                <li><a class="button-foot" href="#">Terms & Conditions</a> </li>
+                <li><a class="button-foot" href="#">FAQ</a></li>
+                <li><a class="button-foot" href="#">Contact Us</a></li>
+                <li class="button-foot">&copy; 2020 PICK & MOVE</li>
+            </ul>
+        </div>
+    </footer>
+
+
+        <script src="{% static 'js/jquery.slim.min.js'%}" ></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js'%}" ></script>
+</body>
+</html>

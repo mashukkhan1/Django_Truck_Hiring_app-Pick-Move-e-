@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel ="stylesheet" type="text/css" href="{% static 'css_files/instantOrder.css'%}">
+    <title>Pick&Move | Hire Instantly</title>
+      <style>
+      .navbar{
+        margin-bottom:0;
+        border-radius:0;
+      }
+      </style>
+</head>
+<body>
+          <nav class="navbar navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand brand-name">
+            <a href="/"><img class="img-responsive2"
+            src="{% static 'images/logo1.jpg' %}"></a>
+          </div>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign up/Log in <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url 'registration' %}">Sign up</a></li>
+                <li><a href="{% url 'login' %}">Log in</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav><br>
+    <div class="boxes">
+        <div class="containerr">
+            <form class="login-form" method="post">
+                {% csrf_token %}
+                <div class="frm">
+                    <label>Full Name</label>
+                    <input class="form-control" type="text" name="name" placeholder="Enter Full Name">
+                </div>
+                <br>
+                <div class="frm">
+                    <label>Mobile Number</label>
+                    <input class="form-control" type="number" name="phone" placeholder="Enter Mobile Number">
+                </div>
+                <br>
+                <div class = 'frm'>
+                    <label>Date</label>
+                    <input class="form-control"  type="date" name="date">
+                </div>
+                <br>
+                <div class = 'frm'>
+                    <label>Time</label>
+                    <input class="form-control" type="time" name="time" placeholder="hrs:mins">
+                </div>
+                <br>
+                 <div class="frm">
+                    <label>Select Truck Category</label>
+                    <select class="form-control" type="text" name="truck" >
+                        <option value="">Select Truck Type</option>
+                        <option value="1 Ton Truck">1 Ton Truck</option>
+                        <option value="2 Ton Truck">2 Ton Truck</option>
+                        <option value="3 Ton Truck">3.5 Ton Truck</option>
+                        <option value="7.5 Ton Truck">7.5 Ton Truck</option>
+                        <option value="15 Ton Truck">15 Ton Truck</option>
+                        <option value="25 Ton Truck">25 Ton Truck</option>
+                        <option value="Prime Mover/Trailer">Prime Mover/Trailer</option>
+                    </select>
+                </div>
+                <br>
+                <div class="frm">
+                    <label>Number of Labours</label>
+                    <input class="form-control" type="number" name="labours" placeholder="Enter Number of Labours">
+                </div>
+                <br>
+
+                <div class = 'frm'>
+                    <label>Product Description</label>
+                    <input class="form-control" type="text" name="loadDesc" placeholder="Brief Description of Goods">
+                </div>
+                <br>
+                <div class = 'frm'>
+                    <label>Loading Location</label>
+                    <input class="form-control" type="text" name="load_location" placeholder="Name of Loading Location">
+                </div>
+                <br>
+                <div class = 'frm'>
+                    <label>Unloading Location</label>
+                    <input class="form-control" type="text" name="unload_location" placeholder="Name of Unloading Location">
+                </div>
+                <br>
+                <input class = "buttonnn" type="submit" value="Hire" >
+
+            </form>
+        </div>
+    </div>
+    <br>
+    <footer id="mainFooter">
+        <div class="container">
+            <ul>
+                <li><a class="button-foot" href="{% url 'about' %}">About</a> </li>
+                <li><a class="button-foot" href="#">Terms & Conditions</a> </li>
+                <li><a class="button-foot" href="#">FAQ</a></li>
+                <li><a class="button-foot" href="#">Contact Us</a></li>
+                <li class="button-foot">&copy; 2020 PICK & MOVE</li>
+            </ul>
+        </div>
+    </footer>
+
+
+        <script src="{% static 'js/jquery.slim.min.js'%}" ></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js'%}" ></script>
+</body>
+</html>

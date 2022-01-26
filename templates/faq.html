@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel ="stylesheet" type="text/css" href="{% static 'css_files/faq.css' %}">
+    <title>FAQ</title>
+      <style>
+      .navbar{
+        margin-bottom:0;
+        border-radius:0;
+      }
+      </style>
+</head>
+
+<body>
+      <nav class="navbar navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand brand-name">
+            <a href="/"><img class="img-responsive2"
+            src="{% static 'images/logo1.jpg' %}"></a>
+          </div>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+              {% if user.is_authenticated %} <!-- built in authentication function -->
+              <!-- <li>Hello, {{ user.first_name }}</li> -->
+              <li><a href="{% url 'profile' %}">{{ user.first_name }}</a> </li>
+              <li><a href="{% url 'logout' %}">Logout</a> </li>
+              {% else %}
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign up/Log in <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url 'registration' %}">Sign up</a></li>
+                <li><a href="{% url 'login' %}">Log in</a></li>
+              </ul>
+            </li>
+              {% endif %}
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <br><br>
+
+    <div class="boxes">
+        <div class="containerr">
+            <br>
+            <h1 class="abt_content">Frequently Asked Questions</h1>
+            <div id="accordion">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      >IS THE PLATFORM SAFE FOR SHIPPING PRODUCTS?
+                    </button>
+                  </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+                     Our registered trucks are verified with documents.
+                      We ensure safety but in case of any unexpected situation, we will provide all necessary information about the truck and operator.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      >ARE CUSTOMERSS BEING OFFERED THE BENEFIT OF RENTING TRUCKS ON A MONTHLY BASIS?
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body">
+                    At present we are not offering any such benefit.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      >IS IT POSSIBLE TO PAY USING DEBIT/CREDIT CARD?
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                  <div class="card-body">
+                    Right now, it is not possible. Customer can pay with cash.
+                  </div>
+                </div>
+              </div>
+                <div class="card">
+                    <div class="card-header" id="headingFour">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                          >WHAT DOES THE SHIPPER DO IF DRIVERS DON’T SHOW UP?
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                      <div class="card-body">
+                        If customer has flexible time, customer may wait and try again to contact driver. If the customer can not reach driver, customer may complain to Pick & Move HelpLine,
+                          cancel the order and place new order.
+                      </div>
+                    </div>
+                  </div>
+                <div class="card">
+                    <div class="card-header" id="headingFive">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                          >IF ANYONE HIRES A TRUCK FOR OTHERS, CAN HE GET ANY DISCOUNT?
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                      <div class="card-body">
+                        Currently we do not have referral bonus. We are working on it. In future we will implement this within our system.
+                      </div>
+                    </div>
+                  </div>
+                <div class="card">
+                    <div class="card-header" id="headingSix">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                          >WHO WILL PAY THE TOLL AND OTHER EXPENSES DURING THE TRIP?
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                      <div class="card-body">
+                        All expenses are included in the bill provided to the customer. The driver will pay.
+                      </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingSeven">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                          >CAN CUSTOMER CHANGE PICK/DROP POINT AFTER CONFIRMING A TRIP?
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
+                      <div class="card-body">
+                        No, customer can create a new trip with updated pick/drop location.
+                      </div>
+                    </div>
+                </div>
+                 <div class="card">
+                    <div class="card-header" id="headingSeven">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                          >CAN’T FIND SPECIFIC PICK/DROP LOCATIONS TO CREATE TRIPS?
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordion">
+                      <div class="card-body">
+                        Select the nearest location and mention the missing location on product details.
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="mainFooter">
+        <div class="container">
+            <ul>
+                <li><a class="button-foot" href="{% url 'about' %}">About</a> </li>
+                <li><a class="button-foot" href="#">Terms & Conditions</a> </li>
+                <li><a class="button-foot" href="#">FAQ</a></li>
+                <li><a class="button-foot" href="#">Contact Us</a></li>
+                <li class="button-foot">&copy; 2020 PICK & MOVE</li>
+            </ul>
+        </div>
+    </footer>
+
+
+       <script src="{% static 'js/jquery.slim.min.js'%}" ></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}" ></script>
+</body>
+</html>

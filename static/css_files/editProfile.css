@@ -1,0 +1,192 @@
+body{
+    background-color: whitesmoke;
+    color: black;
+    font-family:"Segoe UI Light" ;
+    font-size: 25px;
+    border-radius: 2px;
+    line-height: 1.5em;
+    margin:0;
+}
+.navbar {
+    background-color: white;
+    color: black;
+    border-bottom: inset;
+}
+.navbar-brand{
+    padding: 3px;
+    margin: 0;
+}
+.navbar a{
+    color: black;
+    font-size: 22px;
+}
+.nav navbar-nav navbar-right{
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.containerr{
+    display: block;
+    width: 80%;
+    margin: auto;
+    margin-top: 1.5em;
+    overflow: hidden;
+    alignment: center;
+    margin-bottom: 1.5em;
+}
+
+.container-frm{
+    display: block;
+    width: 80%;
+    margin: auto;
+    margin-top: 8px;
+    margin-bottom: 1em;
+    overflow: hidden;
+    alignment: center;
+    padding-left: 1em;
+}
+.buttonnn{
+    background-color: rgba(47,150,137,0.62);
+    color: white;
+    font-size: 20px;
+    border-radius: 15px;
+    border-color: rgba(47,150,137,0.21);
+    padding: 10px 10px;
+    margin-left: 1em;
+    alignment: center;
+    margin-top: 1em;
+}
+.buttonnn:hover {
+    background-color: #007b83;
+    color: white;
+}
+.button_cancel{
+    background-color: rgba(251,10,10,0.69);
+    color: white;
+    font-size: 20px;
+    border-radius: 15px;
+    border-color: rgba(47,150,137,0.21);
+    padding: 10px 10px;
+    margin-left: 1em;
+    alignment: center;
+}
+.button_cancel:hover {
+    background-color: darkred;
+    color: white;
+}
+.link_class{
+    font-size: 25px;
+    padding: 20px 10px 10px 10px;
+    margin-left: 0.7em;
+    color: rgba(0,67,65,0.77);
+}
+.abt_content{
+    font-size: 40px;
+    font-family: "Segoe UI";
+    color: rgba(23,86,90,0.78);
+    padding-bottom: 0.5em;
+    text-align: center;
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+}
+#main-header{
+    background-color: whitesmoke;
+    color: black;
+}
+header{
+    color: white;
+    padding: 20px;
+}
+
+a.button-nav{
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+.button-nav:hover {
+    background-color: rgba(47,150,137,0.38);
+    color: white;
+    padding: 10px 5px;
+}
+.boxes{
+    background-color: rgba(66,188,176,0.26);
+    border-radius: 10px;
+    width: 40%;
+    padding :1px;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 1em;
+    line-height: 17px;
+}
+
+
+.frm label{
+    display: block;
+    margin-bottom: 10px;
+    color: rgba(0,67,65,0.77);
+}
+.frm{
+    padding-left: 1em;
+    padding-bottom: 1px;
+    font-size:20px;
+}
+.frm input[type = 'text'], .frm textarea {
+    padding: 6px;
+    width: 90%;
+    background-color: ghostwhite;
+}
+.frm input[type = 'email'], .frm textarea {
+    padding: 6px;
+    width: 90%;
+    background-color: ghostwhite;
+}
+.block{
+    width: 33.3%;
+    border: 1px solid;
+    padding :10px;
+    box-sizing: border-box;
+}
+#mainFooter{
+    background:#005c59;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    margin-top: 3px;
+}
+#mainFooter li{
+    display: inline;
+    padding: 20px;
+    padding-bottom: 0;
+
+}
+#mainFooter ul{
+    list-style: none;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+#mainFooter a{
+    text-decoration: none;
+}
+#mainFooter a:hover{
+    color: darkgray;
+}
+.button-foot{
+    color: whitesmoke;
+}
+.space{
+    color: #1b6d85;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+}
+@media(max-width:600px){ /* if the browser size goes under 600px
+                            this will manage the floats. they will
+                            come under one another. and it will be completely
+                            responsive*/
+    #main{
+        width: 100%;
+        float: none;
+    }
+    #sidebar{
+        width: 100%;
+        float: none;
+    }
+}
